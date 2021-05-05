@@ -1,7 +1,7 @@
 /*!
-* Start Bootstrap - Creative v6.0.5 (https://startbootstrap.com/theme/creative)
+* Start Bootstrap - Grayscale v6.0.4 (https://startbootstrap.com/theme/grayscale)
 * Copyright 2013-2021 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-creative/blob/master/LICENSE)
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
 */
 (function ($) {
     "use strict"; // Start of use strict
@@ -30,43 +30,26 @@
     });
 
     // Closes responsive menu when a scroll trigger link is clicked
-    $('.js-scroll-trigger').click(function () {
-        $('.navbar-collapse').collapse('hide');
+    $(".js-scroll-trigger").click(function () {
+        $(".navbar-collapse").collapse("hide");
     });
 
     // Activate scrollspy to add active class to navbar items on scroll
-    $('body').scrollspy({
-        target: '#mainNav',
-        offset: 75
+    $("body").scrollspy({
+        target: "#mainNav",
+        offset: 100,
     });
 
     // Collapse Navbar
     var navbarCollapse = function () {
         if ($("#mainNav").offset().top > 100) {
-            $("#mainNav").addClass("navbar-scrolled");
+            $("#mainNav").addClass("navbar-shrink");
         } else {
-            $("#mainNav").removeClass("navbar-scrolled");
+            $("#mainNav").removeClass("navbar-shrink");
         }
     };
     // Collapse now if page is not at top
     navbarCollapse();
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
-
-    // Magnific popup calls
-    $('#portfolio').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        tLoading: 'Loading image #%curr%...',
-        mainClass: 'mfp-img-mobile',
-        gallery: {
-            enabled: true,
-            navigateByImgClick: true,
-            preload: [0, 1]
-        },
-        image: {
-            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-        }
-    });
-
 })(jQuery); // End of use strict
